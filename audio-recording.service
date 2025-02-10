@@ -1,0 +1,13 @@
+[Unit]
+Description=Non stop recording
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=pi
+Type=simple
+ExecStart=/bin/bash /home/pi/audio-recording.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
