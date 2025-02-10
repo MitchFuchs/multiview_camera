@@ -5,7 +5,7 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c 'until ping -c1 172.20.67.150 &>/dev/null; do sleep 1; done; mount -t cifs -o username=pi_camera,password=chimp3dNAS,rw,uid=1000,gid=500 //172.20.67.150/data /mnt/data'
+ExecStart=/bin/bash -c 'until ping -c1 NAS_IP_ADDRESS &>/dev/null; do sleep 1; done; mount -t cifs -o username=NAS_client_username,password=NAS_client_password,rw,uid=1000,gid=500 //172.20.67.150/data /mnt/data'
 RemainAfterExit=yes
 
 [Install]
