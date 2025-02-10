@@ -1,0 +1,15 @@
+[Unit]
+Description=Python Script Service
+After=network.target
+
+[Service]
+User=pi
+Type=simple
+ExecStart=/bin/bash /home/pi/start_camera_and_listener.sh >> /home/pi/log_listener.log 2>&1
+#ExecStart=/usr/bin/python /home/pi/listener.py
+Restart=always
+#RestartSec=20s
+
+[Install]
+WantedBy=multi-user.target
+
